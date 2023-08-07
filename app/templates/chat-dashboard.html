@@ -1,0 +1,37 @@
+<div class="main">
+  <div class="w3-container w3-pale-green p-2 border-bottom shadow">
+    <div class="d-flex align-items-center">
+      <img
+        src="https://images.unsplash.com/photo-1499996860823-5214fcc65f8f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8ZmFjZXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60"
+        class="rounded-circle p-1 border me-2"
+        width="50px"
+        height="50px"
+        alt=""
+      />
+      <b>{{current_user.username}}</b>
+    </div>
+  </div>
+  <div class="chats-container container mx-auto my-1">
+    <div class="chats container mx-auto" id="chats-container"></div>
+  </div>
+  <!-- searchbar -->
+  <div class="searchbar container">
+    <div
+      class="container border shadow border-secondary rounded p-3 w3-pale-green"
+    >
+      <div class="input-group">
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Type here messages..."
+          id="input-message"
+        />
+        <div class="input-group-append">
+          <button class="btn w3-green disabled" type="button" id="send-btn">
+            <ion-icon name="send-outline"></ion-icon>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

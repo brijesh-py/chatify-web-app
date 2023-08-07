@@ -1,0 +1,41 @@
+{% extends 'auth_base.html' %}
+{% block title %}Join - Chatify{% endblock %}
+{% block content %}
+    <div class="container mx-auto">
+        <div class="container mx-auto my-3 py-3">
+            <h1 class="text-center text-success"><strong>Chatify.</strong></h1>
+            <div class="mt-4 mx-auto" style="max-width: 400px;">
+                <div class="text-center my-2">
+                    {% with messages = get_flashed_messages() %}
+                    {% if messages %}
+                    <span class="text-{{messages[0][1]}}">{{messages[0][0]}}</span>
+                    {% endif %}
+                {% endwith %}
+                </div>
+                <form action="" method="post">
+                    {{form.csrf_token}}
+                    <div class="mb-2">
+                        {{form.email(class="form-control rounded-5 border-secondary border shadow", placeholder="Email",  id="email")}}
+                        {% for x in form.errors.email %}
+                            <strong class="text-danger">{{x}}</strong>
+                        {% endfor %}
+                    </div>
+                    <div class="mb-3">
+                        {{form.password(class="form-control rounded-5 border-secondary border shadow", placeholder="Password",  id="password")}}
+                        {% for x in form.errors.password %}
+                            <strong class="text-danger">{{x}}</strong>
+                        {% endfor %}
+                    </div>
+                    <div class="mx-auto d-flex justify-content-between align-items-center">
+                        {{form.submit(class="btn btn-primary w-50 rounded-5")}}
+                        <a href="" class="text-primary">forgot password</a>
+                    </div>
+                </form>
+                <div class="mt-3">
+                    <span>Don't have an account?</span>
+                    <a href="/auth/join/" class="text-success mx-2">Join</a>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,46 @@
+{% extends 'auth_base.html' %}
+{% block title %}Join - Chatify{% endblock %}
+{% block content %}
+    <div class="container mx-auto">
+        <div class="container mx-auto my-3 py-3">
+            <h1 class="text-center text-success"><strong>Chatify.</strong></h1>
+            <div class="mt-4 mx-auto" style="max-width: 400px;">
+                <div class="text-center my-2">
+                    {% with messages = get_flashed_messages() %}
+                    {% if messages %}
+                    <span class="text-{{messages[0][1]}}">{{messages[0][0]}}</span>
+                    {% endif %}
+                {% endwith %}
+                </div>
+                <form action="" method="post">
+                    {{form.csrf_token}}
+                    <div class="mb-2">
+                        {{form.username(class="form-control rounded-5 border-secondary border shadow", placeholder="Username",  id="username")}}
+                        {% for x in form.errors.username %}
+                            <strong class="text-danger">{{x}}</strong>
+                        {% endfor %}
+                    </div>
+                    <div class="mb-2">
+                        {{form.email(class="form-control rounded-5 border-secondary border shadow", placeholder="Email",  id="email")}}
+                        {% for x in form.errors.email %}
+                            <strong class="text-danger">{{x}}</strong>
+                        {% endfor %}
+                    </div>
+                    <div class="mb-3">
+                        {{form.password(class="form-control rounded-5 border-secondary border shadow", placeholder="Password",  id="password")}}
+                        {% for x in form.errors.password %}
+                            <strong class="text-danger">{{x}}</strong>
+                        {% endfor %}
+                    </div>
+                    <div class="mx-auto">
+                        {{form.submit(class="btn btn-primary form-control rounded-5 d-block")}}
+                    </div>
+                </form>
+                <div class="mt-3">
+                    <span>Already have an account?</span>
+                    <a href="/auth/login" class="text-success mx-2">Login</a>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,125 @@
+*{
+  margin: 0px;
+  padding: 0px;
+}
+.bold{
+  font-weight: bold;
+}
+::-webkit-scrollbar{
+  display: none;
+}
+.sidebar{
+  position: fixed;
+  width: 250px;
+  overflow: auto;
+  height: 100%;
+}
+.rooms{
+  overflow: scroll;
+  max-height: 100%;
+}
+.room .profile-image{
+  width: 50px;
+  height: 50px;
+}
+.room .profile-text{
+  width: 40px;
+  height: 40px;
+  font-size: 30px;
+  display: grid;
+  place-items: center;
+}
+#sidebar-toggler{
+  position: absolute;
+  top: 50%;
+  right: -100px;
+  font-size: 30px;
+  z-index: 9910;
+}
+/* main */
+.main{
+  margin-left: 250px;
+  position: relative;
+}
+.chats-container{
+  position: relative;
+  overflow: scroll;
+}
+.chats{
+  /* position: fixed; */
+  width: 80%;
+  overflow: scroll;
+  max-height: 70vh;
+}
+.chats .profile-image{
+  min-width: 40px;
+  min-height: 40px;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.chats  .sender .chats-message{
+  border-top-left-radius: 0px!important;
+  max-width: 50%;
+  word-wrap: break-word;
+  word-break: break-all;
+}
+.chats .profile-text{
+  width: 50px;
+  height: 50px;
+}
+.chats .receiver .chats-message{
+  border-top-right-radius: 0px!important;
+  max-width: 50%;
+  margin-left: auto;
+  word-wrap: break-word;
+  word-break: break-all;
+}
+.searchbar{
+  position: fixed;
+  bottom: 30px;
+  width: 50%;
+  left: 30%;
+}
+
+#sidebar-toggler{
+  position: fixed;
+  top: 50%;
+  left: -4px;
+  font-size: 25px;
+  transform: translateY(-50%);
+  display: none;
+}
+@media screen and (max-width:800px) {
+    .sidebar{
+      position: relative;
+      left: -100%;
+      height: 100vh;
+      z-index: 1;
+      transition: .5s;
+    }
+    #sidebar-toggler{
+      display: block;
+    }
+    .sidebar.show-sidebar{
+      left: 0px;
+    }
+    .main{
+      margin-left: 0px;
+      position: fixed;
+      top: 0px;
+      left: 0px;
+      width: 100%;
+    }
+    .chats{
+      width: 100%;
+    }
+    .searchbar{
+      width: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    .chats .chats-message{
+      max-width: 80%!important;
+    }
+}

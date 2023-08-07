@@ -1,0 +1,11 @@
+{
+    "cSpell.words": [
+        "chatbar",
+        "Chatify",
+        "sqlalchemy"
+    ],
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.black-formatter"
+    },
+    "python.formatting.provider": "none"
+}
